@@ -1,0 +1,6 @@
+{
+  "name": "Azin Mirror",
+  "description": "Manufacturer and installer of luxury LED mirrors, bathroom mirrors, and decorative mirrors in Tehran, Iran. Direct production and custom orders.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
