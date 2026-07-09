@@ -17,18 +17,18 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 // Types & Data
-import { Language, Product, Project } from './types';
-import { UI_TRANSLATIONS, PRODUCTS, PROJECTS, FAQS } from './data';
+import { Language, Product, Project } from '../types';
+import { UI_TRANSLATIONS, PRODUCTS, PROJECTS, FAQS } from '../data';
 
-// Components
-import Header from './components/Header';
-import ServicesSection from './components/ServicesSection';
-import TrustSection from './components/TrustSection';
-import ContactForm from './components/ContactForm';
-import ProductDetailModal from './components/ProductDetailModal';
-import AboutSection from './components/AboutSection';
-import FAQSection from './components/FAQSection';
-import MirrorSimulator from './components/MirrorSimulator';
+
+import  Header  from '../components/Header';
+import  ServicesSection  from '../components/ServicesSection';
+import  TrustSection from '../components/TrustSection';
+import  ContactForm  from '../components/ContactForm';
+import  ProductDetailModal  from '../components/ProductDetailModal';
+import AboutSection  from '../components/AboutSection';
+import  FAQSection from '../components/FAQSection';
+import  MirrorSimulator from '../components/MirrorSimulator';
 
 export default function App() {
   // Initialize language from localStorage if available
