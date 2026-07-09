@@ -29,6 +29,7 @@ import  ProductDetailModal  from '../components/ProductDetailModal';
 import AboutSection  from '../components/AboutSection';
 import  FAQSection from '../components/FAQSection';
 import  MirrorSimulator from '../components/MirrorSimulator';
+import HeroSection from "../components/sections/HeroSection";
 
 export default function App() {
   // Initialize language from localStorage if available
@@ -87,7 +88,7 @@ export default function App() {
               id="home-view"
             >
               {/* Hero Section */}
-              <section className="relative overflow-hidden bg-white py-20 sm:py-28 border-b border-slate-100" id="hero-section">
+              <HeroSection />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                   <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center`}>
                     
@@ -204,7 +205,7 @@ export default function App() {
 
                   </div>
                 </div>
-              </section>
+                
 
               {/* Product Grid Preview (Home Page Showcase) */}
               <section className="py-24 bg-white" id="products-preview-section">
