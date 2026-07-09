@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Azin Mirror Website
 
-# Run and deploy your AI Studio app
+Modern website for Azin Mirror, manufacturer of LED and decorative mirrors.
 
-This contains everything you need to run your app locally.
+## About
 
-View your app in AI Studio: https://ai.studio/apps/180792ed-5e98-4c13-a145-e5750d91a137
+Azin Mirror is a mirror manufacturing company specializing in:
+- LED mirrors
+- Bathroom mirrors
+- Decorative mirrors
+- Custom projects
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Motion
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Persian / English support
+- Product showcase
+- B2B project presentation
+- WhatsApp customer support
+- Responsive design
+
+## Development
+
+Install:
+
+npm install
+
+Run:
+
+npm run dev
+
+Build:
+
+npm run build
