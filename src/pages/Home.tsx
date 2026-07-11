@@ -29,7 +29,7 @@ import  ProductDetailModal  from '../components/ProductDetailModal';
 import AboutSection  from '../components/AboutSection';
 import  FAQSection from '../components/FAQSection';
 import  MirrorSimulator from '../components/MirrorSimulator';
-import HeroSection from "../components/sections/HeroSection";
+// HeroSection is rendered directly below to avoid prop drilling and style separation issues
 
 export default function App() {
   // Initialize language from localStorage if available
@@ -42,10 +42,27 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
 
-  // Sync language selection to localStorage
+  // Sync language selection and update page title
   useEffect(() => {
     localStorage.setItem('azin_lang', language);
-  }, [language]);
+    
+    const pageNames: Record<string, Record<Language, string>> = {
+      home: { fa: 'صفحه اصلی', en: 'Home' },
+      products: { fa: 'محصولات', en: 'Products' },
+      projects: { fa: 'پروژه‌ها', en: 'Projects' },
+      about: { fa: 'درباره ما', en: 'About Us' },
+      faq: { fa: 'سوالات متداول', en: 'FAQ' },
+      contact: { fa: 'تماس با ما', en: 'Contact Us' }
+    };
+    
+    const pageTitle = pageNames[activeTab]?.[language] || '';
+    const brandName = language === 'fa' ? 'صنایع آینه آذین' : 'Azin Mirror';
+    const subtitle = language === 'fa' ? 'تولیدکننده آینه‌های هوشمند و بک‌لایت' : 'Premium LED & Decorative Mirrors';
+    
+    document.title = activeTab === 'home' 
+      ? `${brandName} | ${subtitle}` 
+      : `${pageTitle} | ${brandName}`;
+  }, [language, activeTab]);
 
   const t = (key: string) => UI_TRANSLATIONS[key]?.[language] || '';
   const isRtl = language === 'fa';
@@ -88,7 +105,7 @@ export default function App() {
               id="home-view"
             >
               {/* Hero Section */}
-              <HeroSection />
+              <section className="relative overflow-hidden bg-white py-20 sm:py-28 border-b border-slate-100 w-full" id="hero-section">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                   <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center`}>
                     
@@ -205,7 +222,7 @@ export default function App() {
 
                   </div>
                 </div>
-                
+              </section>
 
               {/* Product Grid Preview (Home Page Showcase) */}
               <section className="py-24 bg-white" id="products-preview-section">
